@@ -127,11 +127,13 @@
         <div class="container">
             <h2 class="section-title">Teatro &amp; Cultura</h2>
             <div class="productions-grid">
-                <a href="#" class="production-card" data-project="o-banquete">
-                    <div class="card-image card-video-cover">
-                        <div class="card-video-wrapper" id="banqueteVideoCard">
-                            <div id="banquetePlayer"></div>
-                        </div>
+                <a href="#" class="production-card card-has-video" data-project="o-banquete">
+                    <div class="card-image">
+                        <img src="images/projects/o-banquete/sopacultural.jpg" alt="O Banquete - Companhia Ensaio Aberto" class="card-poster">
+                        <video class="card-video" muted loop playsinline preload="metadata">
+                            <source src="images/projects/o-banquete/banquete-cover.mp4" type="video/mp4">
+                            <source src="images/projects/o-banquete/banquete-cover.webm" type="video/webm">
+                        </video>
                         <span class="card-badge">Destaque</span>
                     </div>
                     <div class="card-info">
@@ -716,8 +718,6 @@
         </div>
     </div>
 
-    <!-- YouTube IFrame API -->
-    <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
 </body>
 </html>

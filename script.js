@@ -381,41 +381,22 @@ document.addEventListener('keydown', function(e) {
 });
 
 // ===========================
-// YOUTUBE PLAYER - O BANQUETE COVER
+// VIDEO CARD HOVER PLAY
 // ===========================
-var banquetePlayer;
+document.querySelectorAll('.card-has-video').forEach(function(card) {
+    var video = card.querySelector('.card-video');
+    if (!video) return;
 
-function onYouTubeIframeAPIReady() {
-    banquetePlayer = new YT.Player('banquetePlayer', {
-        videoId: 'Gq-hiwWCfao',
-        playerVars: {
-            start: 444,
-            end: 450,
-            autoplay: 1,
-            mute: 1,
-            controls: 0,
-            showinfo: 0,
-            rel: 0,
-            loop: 1,
-            modestbranding: 1,
-            playsinline: 1,
-            disablekb: 1,
-            fs: 0,
-            iv_load_policy: 3
-        },
-        events: {
-            onReady: function(event) {
-                event.target.playVideo();
-            },
-            onStateChange: function(event) {
-                if (event.data === YT.PlayerState.ENDED || event.data === YT.PlayerState.PAUSED) {
-                    banquetePlayer.seekTo(444);
-                    banquetePlayer.playVideo();
-                }
-            }
-        }
+    card.addEventListener('mouseenter', function() {
+        video.currentTime = 0;
+        video.play().catch(function() {});
     });
-}
+
+    card.addEventListener('mouseleave', function() {
+        video.pause();
+        video.currentTime = 0;
+    });
+});
 
 // ===========================
 // CONTACT FORM
