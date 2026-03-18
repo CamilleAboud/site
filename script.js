@@ -80,7 +80,7 @@ document.querySelectorAll('.about-content, .about-image, .production-card, .time
 // ===========================
 // SMOOTH SCROLL
 // ===========================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]:not([data-project])').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
@@ -91,6 +91,214 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
+});
+
+// ===========================
+// PROJECT MODAL
+// ===========================
+const projectData = {
+    'ensaio-aberto': {
+        title: 'Instituto Ensaio Aberto',
+        category: 'Teatro & Cultura',
+        role: 'Coordenação Geral — Gestão de Projetos e Produção',
+        date: 'Dez 2023 — Presente',
+        image: 'images/projects/ensaio-aberto.webp',
+        description: '<p>Atuação junto à Companhia Ensaio Aberto no Armazém da Utopia, na zona portuária do Rio de Janeiro.</p><ul><li>Coordenação e gestão do projeto "Teatro dos Trabalhadores" — financiado por emenda parlamentar</li><li>Gerenciamento de conteúdo para a publicação de 4 cadernos de estudos, produzidos pelo núcleo artístico com a pesquisadora francesa Béatrice Picon-Vallin</li><li>Produção nos espetáculos "Morte e Vida Severina" (2025), "O Banquete" (2024) e "Encontro Em Boa Companhia" (2023)</li><li>Produção técnica do Armazém da Utopia para o evento "U20 Rio Summit" (extensão do G20) e a gravação do projeto "Funk Generation" da Anitta</li></ul>',
+        tags: ['Teatro', 'Gestão de Projetos', 'Produção Cultural', 'Emenda Parlamentar']
+    },
+    'elefante': {
+        title: 'ElefantE',
+        category: 'Teatro & Cultura',
+        role: 'Produtora Executiva — Direção de Flávio Souza',
+        date: 'Mai — Set 2023',
+        image: 'images/projects/elefante.jpg',
+        description: '<p>Espetáculo teatral premiado na 8ª Premiação CBTIJ 2024 em 6 categorias, incluindo Melhor Espetáculo.</p><ul><li>Gestão completa da pré-produção à prestação de contas</li><li>Temporada no teatro do Espaço Cultural Municipal Sérgio Porto (Humaitá, RJ)</li><li>Selecionado pelo edital Foca 2022 da Prefeitura do Rio de Janeiro</li><li>Organização de equipe, agenda, captação de apoios e prestação de contas</li></ul><p><strong>Prêmios CBTIJ 2024:</strong> Melhor Espetáculo, Adereços, Melhor Direção Musical, Cenário, Melhor Ator, Iluminação.</p>',
+        tags: ['Teatro', 'Produção Executiva', 'CBTIJ', 'Premiado']
+    },
+    'conto-de-quem-sonha': {
+        title: 'Conto de Quem Sonha',
+        category: 'Teatro & Cultura',
+        role: 'Produtora Assistente & Captação de Apoio — Teçá Arte e Cultura',
+        date: '2023',
+        image: null,
+        description: '<ul><li>Assistência na execução da temporada de circulação pelas unidades do SESC na cidade do Rio de Janeiro</li><li>Montagem e desmontagem de cenário, figurinos e adereços cênicos</li><li>Captação de apoio para alimentação da equipe, com logística junto ao fornecedor parceiro</li><li>Produção de conteúdo para as redes sociais do espetáculo</li></ul>',
+        tags: ['Teatro', 'SESC', 'Circulação', 'Produção Assistente']
+    },
+    'elas-brilham': {
+        title: 'Elas Brilham',
+        category: 'Teatro & Cultura',
+        role: 'Produtora Assistente — Direção de Frederico Reder / Brain+',
+        date: 'Set — Out 2022',
+        image: 'images/projects/elas-brilham.jpg',
+        description: '<p>Teatro musical com temporadas no Rio de Janeiro e São Paulo, celebrando grandes mulheres da música brasileira.</p><ul><li>Assistência na execução das temporadas no Teatro Claro (Copacabana, RJ) e Teatro Claro (Shopping Vila Olímpia, SP)</li><li>Montagem e desmontagem, manutenção do espetáculo e cuidado especial com o elenco</li><li>Produção de conteúdo e suporte para as equipes de comunicação e assessoria de imprensa da Brain+</li></ul>',
+        tags: ['Teatro Musical', 'Teatro Claro', 'Rio de Janeiro', 'São Paulo']
+    },
+    'giros-filmes': {
+        title: 'Giros Filmes — Pós-Produção',
+        category: 'Audiovisual & Cinema',
+        role: 'Data Manager (Logger)',
+        date: 'Out — Dez 2023',
+        image: 'images/projects/clube-spelunca.png',
+        description: '<p>Atuação na equipe de pós-produção da Giros Filmes, produtora carioca.</p><ul><li>Gerente de logística dos HDs da produtora, implantando sistema de organização para entradas e saídas dos materiais de logagem e armazenamento físico</li><li>Logger dos projetos em execução na produtora durante o período da contratação</li><li>Destaque para a série "Clube Spelunca" da HBO/TNT — produzida pela O2 Filmes</li></ul>',
+        tags: ['Pós-Produção', 'Data Manager', 'HBO', 'O2 Filmes']
+    },
+    'mais-um-dia': {
+        title: 'Mais um dia, Zona Norte',
+        category: 'Audiovisual & Cinema',
+        role: 'Assistente de Produção — Acalante Filmes / Dir. Allan Ribeiro',
+        date: '2022',
+        image: 'images/projects/mais-um-dia-zona-norte.jpg',
+        description: '<p>Longa-metragem de cinema independente, grande vencedor do 56º Festival de Brasília do Cinema Brasileiro (2023).</p><ul><li>Pré-produção das diárias com revisão de ordem do dia, planejamento e controle dos mapas de transporte</li><li>Apoio nos sets de gravação (internos e externos)</li></ul><p><strong>Prêmios — 56º Festival de Brasília 2023:</strong></p><ul><li>Melhor Longa Metragem</li><li>Melhor Longa (Júri Abraccine)</li><li>Melhor Ator Coadjuvante</li><li>Melhor Trilha Sonora</li><li>Melhor Atriz Coadjuvante</li><li>Menção Honrosa</li></ul>',
+        tags: ['Cinema', 'Longa-metragem', 'Festival de Brasília', 'Premiado']
+    },
+    'isso-aqui': {
+        title: 'Isso Aqui Não É Uma Festa',
+        category: 'Audiovisual & Cinema',
+        role: 'Assistente de Produção — Caprisciana Produções / Murilo Sampaio',
+        date: '2022',
+        image: null,
+        description: '<p>Projeto de cinema independente em processo de desenvolvimento e pesquisa.</p><ul><li>Coordenação da pré-produção, montagem e desmontagem, gestão de transporte, alimentação, casting e estrutura dos sets (internos e externos)</li><li>Interface entre direção, produção e equipe técnica</li><li>Contribuição na produção de arte, auxiliando na montagem artística das cenas internas</li></ul>',
+        tags: ['Cinema Independente', 'Produção de Arte', 'Pré-Produção']
+    },
+    'amar-fortes': {
+        title: 'Amar é para os Fortes',
+        category: 'Audiovisual & Cinema',
+        role: 'Assistente de Produção (apoio de set) — Prodigo Films / Amazon Prime Video',
+        date: '2022',
+        image: 'images/projects/amar-e-para-os-fortes.jpg',
+        description: '<p>Série original Amazon Prime Video, criada por Marcelo D2. Projeto de publicidade (Marketing Day).</p><ul><li>Pré-produção: visita técnica de locação, planejamento e logística das diárias de produção, mapa de transporte, orçamentos e controle de custos</li><li>Execução de 2 sets internos em estúdios simultâneos — Fotografia e Vídeo</li><li>Fechamento e envio dos contratos para os fornecedores</li></ul>',
+        tags: ['Publicidade', 'Amazon Prime Video', 'Prodigo Films', 'Série']
+    },
+    'tocaia': {
+        title: 'Tocaia Filmes',
+        category: 'Audiovisual & Cinema',
+        role: 'Produção e Assistência + Produção de Set',
+        date: 'Ago 2021 — Fev 2022',
+        image: null,
+        description: '<p>Produtora audiovisual com foco em conteúdo para YouTube e marcas.</p><ul><li>Conteúdo para canais do YouTube agenciados pela empresa Omni Criativo</li><li>Pré à pós-produção das diárias: coordenação de equipe, mapas de transporte, gerência de agenda, montagem/desmontagem de sets, claquete, ordem do dia, logagem de material</li><li>Projetos para a marca de games Ubisoft (Rainbow Six)</li><li>Podcast "Só 1 Minutinho" — 1ª temporada, com Ed Gama e Estevam Nabote</li><li>Canal "Talk Astral Show" — com Fernanda Souza como convidada</li><li>Canal "Castro Brothers" — quadro "UTC" e outros</li></ul>',
+        tags: ['YouTube', 'Ubisoft', 'Podcast', 'Produção de Set']
+    },
+    'cerol': {
+        title: 'Clipe "Cerol" — Thom',
+        category: 'Audiovisual & Cinema',
+        role: 'Assistente de Produção — Cachoeira Music',
+        date: '2023',
+        image: 'images/projects/cerol-thom.jpg',
+        description: '<p>Produção do videoclipe musical "Cerol" do artista Thom, pela Cachoeira Music.</p><ul><li>Assistência na produção e logística do set de filmagem</li><li>Apoio na coordenação de equipe e cronograma de gravação</li></ul>',
+        tags: ['Clipe Musical', 'Produção Audiovisual']
+    },
+    'se-voce-nao-vem': {
+        title: 'Clipe "Se Você Não Vem"',
+        category: 'Audiovisual & Cinema',
+        role: 'Assistente de Produção — AYO / TH4I e MC THA',
+        date: '2021',
+        image: 'images/projects/se-voce-nao-vem.jpg',
+        description: '<p>Videoclipe do DJ e produtor TH4I com a colaboração de MC THA, lançado pela Universal Music Brasil.</p><ul><li>Assistência na produção e execução do set de gravação</li><li>Apoio logístico e coordenação durante as diárias de filmagem</li></ul>',
+        tags: ['Clipe Musical', 'Universal Music', 'TH4I', 'MC THA']
+    },
+    'escola-conquer': {
+        title: 'Escola Conquer',
+        category: 'Audiovisual & Cinema',
+        role: 'Produção — Direção de Leo Pacífico',
+        date: '2021',
+        image: 'images/projects/escola-conquer.png',
+        description: '<p>Produção de conteúdo audiovisual para a Escola Conquer, plataforma de educação e desenvolvimento profissional.</p><ul><li>Produção e assistência nas diárias de gravação</li><li>Apoio na logística e organização do set</li></ul>',
+        tags: ['Conteúdo Educacional', 'Produção Audiovisual']
+    },
+    'kelly-jorge': {
+        title: 'Kelly Jorge',
+        category: 'Produção Artística',
+        role: 'Produção Executiva e Artística + Suporte Comercial — Espetáculo Entretenimento',
+        date: 'Mar 2022 — Jan 2024',
+        image: 'images/projects/kelly-jorge.jpg',
+        description: '<p>Gerenciamento artístico e produção de eventos para Kelly Jorge, locutora da Rádio FM O Dia, sob coordenação do empresário Raphael Almeida.</p><ul><li>Planejamento, logística e execução das ações publicitárias (caseiras e externas)</li><li>Produção de conteúdo como cobertura para as redes sociais</li><li>Atendimento e negociação com clientes e parceiros via WhatsApp Business</li><li>Interface com a equipe de design, atuando nas estratégias de conteúdo</li></ul>',
+        tags: ['Gerenciamento Artístico', 'Eventos', 'Rádio FM O Dia', 'Social Media']
+    },
+    'carnaval-kelly': {
+        title: 'Carnaval — Kelly Jorge',
+        category: 'Produção Artística',
+        role: 'Produção Artística — Sapucaí & Intendente Magalhães',
+        date: '2022 — 2023',
+        image: 'images/projects/carnaval-intendente.jpg',
+        description: '<p>Produção artística para as apresentações de carnaval de Kelly Jorge na Sapucaí e Intendente Magalhães.</p><ul><li>Planejamento e execução da logística para os desfiles e eventos de carnaval</li><li>Coordenação de equipe nos dias de apresentação</li><li>Produção de conteúdo e cobertura para redes sociais durante o carnaval</li></ul>',
+        tags: ['Carnaval', 'Sapucaí', 'Produção Artística', 'Eventos']
+    },
+    'mita-festival': {
+        title: 'MITA Festival',
+        category: 'Produção Artística',
+        role: 'Equipe Harry Albergaria — 30e São Paulo',
+        date: '2022',
+        image: 'images/projects/mita-festival.jpg',
+        description: '<p>Festival de música e entretenimento criado pela Bonus Track e 30e, realizado em São Paulo e Rio de Janeiro.</p><ul><li>Atuação na equipe de produção liderada por Harry Albergaria</li><li>Apoio na logística e coordenação do evento</li><li>Suporte nas operações durante os dias de festival</li></ul>',
+        tags: ['Festival', 'Música', 'São Paulo', 'Eventos']
+    },
+    'casa-e-video': {
+        title: 'Casa & Vídeo',
+        category: 'Produção Artística',
+        role: 'Produção de Kit Publicitário',
+        date: '2021',
+        image: 'images/projects/casa-e-video.jpg',
+        description: '<p>Produção de kit publicitário para a rede de varejo Casa & Vídeo.</p><ul><li>Planejamento e execução da produção de materiais publicitários</li><li>Coordenação de fornecedores e logística de entrega</li></ul>',
+        tags: ['Publicidade', 'Varejo', 'Kit Publicitário']
+    }
+};
+
+const modal = document.getElementById('projectModal');
+const modalClose = document.getElementById('modalClose');
+const modalImage = document.getElementById('modalImage');
+const modalCategory = document.getElementById('modalCategory');
+const modalTitle = document.getElementById('modalTitle');
+const modalRole = document.getElementById('modalRole');
+const modalDate = document.getElementById('modalDate');
+const modalDescription = document.getElementById('modalDescription');
+const modalTags = document.getElementById('modalTags');
+
+function openModal(projectId) {
+    const data = projectData[projectId];
+    if (!data) return;
+
+    if (data.image) {
+        modalImage.innerHTML = '<img src="' + data.image + '" alt="' + data.title + '">';
+        modalImage.classList.remove('no-image');
+    } else {
+        modalImage.innerHTML = '';
+        modalImage.classList.add('no-image');
+    }
+
+    modalCategory.textContent = data.category;
+    modalTitle.textContent = data.title;
+    modalRole.textContent = data.role;
+    modalDate.textContent = data.date;
+    modalDescription.innerHTML = data.description;
+
+    modalTags.innerHTML = data.tags.map(function(tag) {
+        return '<span>' + tag + '</span>';
+    }).join('');
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.production-card[data-project]').forEach(function(card) {
+    card.addEventListener('click', function(e) {
+        e.preventDefault();
+        openModal(this.getAttribute('data-project'));
+    });
+});
+
+modalClose.addEventListener('click', closeModal);
+
+modal.addEventListener('click', function(e) {
+    if (e.target === modal) closeModal();
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
 });
 
 // ===========================
