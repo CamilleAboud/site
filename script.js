@@ -445,20 +445,3 @@ document.querySelectorAll('.card-has-video').forEach(function(card) {
 // ===========================
 // CONTACT FORM
 // ===========================
-const contactForm = document.getElementById('contactForm');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const btn = contactForm.querySelector('.btn-submit');
-        const originalText = btn.textContent;
-        btn.textContent = 'SENT!';
-        btn.style.background = 'var(--color-accent)';
-
-        setTimeout(() => {
-            btn.textContent = originalText;
-            btn.style.background = '';
-            contactForm.reset();
-        }, 3000);
-    });
-}
