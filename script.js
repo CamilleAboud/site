@@ -72,7 +72,7 @@ const revealObserver = new IntersectionObserver((entries) => {
     rootMargin: '0px 0px -40px 0px'
 });
 
-document.querySelectorAll('.about-content, .about-image, .production-card, .timeline-item, .award-card, .contact-info, .contact-form-wrap, .photo-divider, .photo-statement-inner, .experience-photo-aside, .news-card').forEach(el => {
+document.querySelectorAll('.about-content, .about-image, .production-card, .timeline-item, .award-card, .contact-info, .contact-form-wrap, .photo-divider, .photo-statement-inner, .experience-photo-aside, .news-card, .service-card, .method-step').forEach(el => {
     el.classList.add('reveal');
     revealObserver.observe(el);
 });
