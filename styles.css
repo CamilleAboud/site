@@ -687,6 +687,10 @@ img {
     color: #2a1e08;
 }
 
+.editorial-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .card-badge {
     position: absolute;
     top: 12px;

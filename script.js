@@ -236,6 +236,41 @@ const projectData = {
         description: '<p>Produção de conteúdo audiovisual para a Escola Conquer, plataforma de educação e desenvolvimento profissional.</p><ul><li>Produção e assistência nas diárias de gravação</li><li>Apoio na logística e organização do set</li></ul>',
         tags: ['Conteúdo Educacional', 'Produção Audiovisual']
     },
+    'cadernos-vermelhos-1': {
+        title: 'Cadernos Vermelhos 1',
+        category: 'Produção Editorial',
+        role: 'Gerenciamento de Conteúdo — Companhia Ensaio Aberto',
+        date: 'Instituto Ensaio Aberto / Funarte',
+        image: 'images/projects/cadernos-vermelhos/cadernos-vermelhos-1.jpg',
+        description: '<p>Primeira edição da publicação <strong>Cadernos Vermelhos</strong>, criada para a socialização dos materiais de pesquisa do <strong>Teatro dos Trabalhadores</strong>, processo de estudo que reúne o coletivo artístico da Companhia Ensaio Aberto regularmente desde 2014.</p>' +
+            '<p>A publicação reúne reflexões, estudos e materiais produzidos pelo núcleo artístico da companhia em parceria com a pesquisadora francesa <strong>Béatrice Picon-Vallin</strong>, referência mundial em estudos teatrais.</p>' +
+            '<p><strong>Viabilização:</strong> Termo de Fomento Plataforma Transferegov n° 881158/2018, "Companhia Ensaio Aberto – Teatro dos Trabalhadores – Pesquisa e Formação – Ano 5", celebrado entre o Instituto Ensaio Aberto e Fundação Nacional de Artes – Funarte.</p>',
+        tags: ['Produção Editorial', 'Cadernos Vermelhos', 'Teatro dos Trabalhadores', 'Funarte', 'Béatrice Picon-Vallin']
+    },
+    'cadernos-vermelhos-2': {
+        title: 'Cadernos Vermelhos 2',
+        category: 'Produção Editorial',
+        role: 'Gerenciamento de Conteúdo — Companhia Ensaio Aberto',
+        date: 'Instituto Ensaio Aberto / Funarte',
+        image: 'images/projects/cadernos-vermelhos/cadernos-vermelhos-2.jpg',
+        description: '<p>Segunda edição da publicação <strong>Cadernos Vermelhos</strong>, dedicada à geração que antecedeu o coletivo artístico.</p>' +
+            '<p><em>"A partir da retomada de fios que permaneceram soltos, vamos, juntos com nossas companhias irmãs espalhadas pelo Brasil e, com esses mesmos fios, tecer uma nova teia. Repensar o teatro épico no Brasil. Retomar a memória, como ferramenta de luta, para a construção não só de um teatro crítico mas para a construção de uma nova sociedade."</em></p>' +
+            '<p>Esta edição integra o grupo de estudos regular da Companhia Ensaio Aberto — o <strong>Teatro dos Trabalhadores</strong> — dando continuidade ao trabalho de pesquisa e formação com a pesquisadora <strong>Béatrice Picon-Vallin</strong>.</p>' +
+            '<p><strong>Viabilização:</strong> Termo de Fomento Plataforma Transferegov n° 881158/2018, "Companhia Ensaio Aberto – Teatro dos Trabalhadores – Pesquisa e Formação – Ano 5", celebrado entre o Instituto Ensaio Aberto e Fundação Nacional de Artes – Funarte.</p>',
+        tags: ['Produção Editorial', 'Cadernos Vermelhos', 'Teatro Épico', 'Funarte', 'Béatrice Picon-Vallin']
+    },
+    'teatros-documentarios': {
+        title: 'Os Teatros Documentários',
+        category: 'Produção Editorial',
+        role: 'Gerenciamento de Conteúdo — Cadernos Vermelhos 3 e 4',
+        date: 'Instituto Ensaio Aberto / Ministério da Cultura',
+        image: 'images/projects/cadernos-vermelhos/teatros-documentarios.jpg',
+        description: '<p>O livro <strong>Os Teatros Documentários</strong>, organizado por <strong>Béatrice Picon-Vallin</strong> e <strong>Érica Magris</strong>, é uma edição da Ensaio Aberto e foi traduzido pela primeira vez para o português por <strong>Fátima Saadi</strong>.</p>' +
+            '<p>A publicação é uma socialização dos materiais de pesquisa do <strong>Teatro dos Trabalhadores</strong> da Companhia Ensaio Aberto, integrando a coleção <strong>Cadernos Vermelhos</strong> como volumes 3 e 4.</p>' +
+            '<p>O trabalho representa um marco na pesquisa teatral brasileira, trazendo ao público de língua portuguesa pela primeira vez esta importante obra sobre teatros documentários, que dialoga com as práticas cênicas contemporâneas e o engajamento social do teatro.</p>' +
+            '<p><strong>Viabilização:</strong> Ministério da Cultura, Secretaria de Cidadania e Diversidade Cultural | Dramaturgia Crítica em Processo — Termo de Fomento — Plataforma Transfere.gov nº 887487/2019.</p>',
+        tags: ['Produção Editorial', 'Cadernos Vermelhos', 'Béatrice Picon-Vallin', 'Érica Magris', 'Fátima Saadi', 'Ministério da Cultura']
+    },
     'kelly-jorge': {
         title: 'Kelly Jorge',
         category: 'Produção Artística',
