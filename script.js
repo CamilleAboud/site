@@ -72,7 +72,7 @@ const revealObserver = new IntersectionObserver((entries) => {
     rootMargin: '0px 0px -40px 0px'
 });
 
-document.querySelectorAll('.about-content, .about-image, .production-card, .timeline-item, .award-card, .contact-info, .contact-form-wrap, .photo-divider, .photo-statement-inner, .experience-photo-aside').forEach(el => {
+document.querySelectorAll('.about-content, .about-image, .production-card, .timeline-item, .award-card, .contact-info, .contact-form-wrap, .photo-divider, .photo-statement-inner, .experience-photo-aside, .news-card').forEach(el => {
     el.classList.add('reveal');
     revealObserver.observe(el);
 });
@@ -97,6 +97,37 @@ document.querySelectorAll('a[href^="#"]:not([data-project])').forEach(anchor => 
 // PROJECT MODAL
 // ===========================
 const projectData = {
+    'o-banquete': {
+        title: 'O Banquete',
+        category: 'Teatro & Cultura',
+        role: 'Produção — Companhia Ensaio Aberto',
+        date: 'Set — Nov 2024',
+        image: 'images/projects/o-banquete/sopacultural.jpg',
+        gallery: [
+            'images/projects/o-banquete/jprevistas-thiago-gouvea.jpg',
+            'images/projects/o-banquete/vislun-thiago-gouvea.webp',
+            'images/projects/o-banquete/brasildefato.webp',
+            'images/projects/o-banquete/diariodorio.jpg'
+        ],
+        description: '<p>Espetáculo teatral baseado nas crônicas musicais semanais de <strong>Mário de Andrade</strong>, escritas para a coluna "Mundo Musical" do jornal <em>Folha da Manhã</em> (1943-1945) — obra inacabada devido à morte do autor.</p>' +
+            '<p>A história se desenrola em "Mentira", descrita como um país vizinho ao Brasil ou uma cidade paulista, onde um banquete se torna cenário para explorar o papel da arte na sociedade e o engajamento crítico com a realidade. A produção encarna uma "arte do inacabado", refletindo a visão crítica de Mário sobre a sociedade e o papel do artista.</p>' +
+            '<p><strong>O espetáculo inaugurou o Teatro Vianinha</strong>, novo espaço com capacidade para 272 pessoas dentro do Armazém da Utopia, no Cais do Porto do Rio de Janeiro.</p>' +
+            '<h4>Ficha Técnica</h4>' +
+            '<ul>' +
+            '<li><strong>Direção:</strong> Luiz Fernando Lobo</li>' +
+            '<li><strong>Dramaturgia:</strong> João Batista</li>' +
+            '<li><strong>Cenografia:</strong> J.C. Serroni</li>' +
+            '<li><strong>Figurinos:</strong> Beth Filipecki & Renaldo Machado</li>' +
+            '<li><strong>Iluminação:</strong> Cesar de Ramires</li>' +
+            '<li><strong>Música Original e Direção Musical:</strong> Felipe Radiccetti</li>' +
+            '<li><strong>Direção de Produção:</strong> Tuca Moraes</li>' +
+            '<li><strong>Elenco:</strong> 21 atores — Leonardo Hinckel, Tuca Moraes, Gilberto Miranda, Grégori Eckert, Luiz Fernando Lobo, Caroline Gerhein, Mateus Pitanga, Mariana Pompeu, Tainá Baldez, Karolyna Mendes, entre outros</li>' +
+            '</ul>' +
+            '<p><strong>Local:</strong> Teatro Vianinha — Armazém da Utopia, Cais do Porto, Rio de Janeiro<br>' +
+            '<strong>Duração:</strong> 90 minutos &bull; <strong>Classificação:</strong> 14+</p>' +
+            '<p><em>"Precisamos reconhecer que não pode haver uma cultura nacional, popular, se virarmos as costas para a nossa herança negra."</em> — Luiz Fernando Lobo, diretor</p>',
+        tags: ['Teatro', 'Mário de Andrade', 'Cia. Ensaio Aberto', 'Teatro Vianinha', 'Armazém da Utopia', 'Inauguração']
+    },
     'ensaio-aberto': {
         title: 'Instituto Ensaio Aberto',
         category: 'Teatro & Cultura',
@@ -251,6 +282,7 @@ const modalTitle = document.getElementById('modalTitle');
 const modalRole = document.getElementById('modalRole');
 const modalDate = document.getElementById('modalDate');
 const modalDescription = document.getElementById('modalDescription');
+const modalGallery = document.getElementById('modalGallery');
 const modalTags = document.getElementById('modalTags');
 
 function openModal(projectId) {
@@ -270,6 +302,18 @@ function openModal(projectId) {
     modalRole.textContent = data.role;
     modalDate.textContent = data.date;
     modalDescription.innerHTML = data.description;
+
+    // Gallery
+    if (data.gallery && data.gallery.length > 0) {
+        modalGallery.innerHTML = '<h4 class="gallery-title">Galeria de Fotos</h4><div class="gallery-grid">' +
+            data.gallery.map(function(img) {
+                return '<div class="gallery-item"><img src="' + img + '" alt="' + data.title + '" loading="lazy"></div>';
+            }).join('') + '</div>';
+        modalGallery.style.display = 'block';
+    } else {
+        modalGallery.innerHTML = '';
+        modalGallery.style.display = 'none';
+    }
 
     modalTags.innerHTML = data.tags.map(function(tag) {
         return '<span>' + tag + '</span>';
@@ -300,6 +344,43 @@ modal.addEventListener('click', function(e) {
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeModal();
 });
+
+// ===========================
+// YOUTUBE PLAYER - O BANQUETE COVER
+// ===========================
+var banquetePlayer;
+
+function onYouTubeIframeAPIReady() {
+    banquetePlayer = new YT.Player('banquetePlayer', {
+        videoId: 'Gq-hiwWCfao',
+        playerVars: {
+            start: 444,
+            end: 450,
+            autoplay: 1,
+            mute: 1,
+            controls: 0,
+            showinfo: 0,
+            rel: 0,
+            loop: 1,
+            modestbranding: 1,
+            playsinline: 1,
+            disablekb: 1,
+            fs: 0,
+            iv_load_policy: 3
+        },
+        events: {
+            onReady: function(event) {
+                event.target.playVideo();
+            },
+            onStateChange: function(event) {
+                if (event.data === YT.PlayerState.ENDED || event.data === YT.PlayerState.PAUSED) {
+                    banquetePlayer.seekTo(444);
+                    banquetePlayer.playVideo();
+                }
+            }
+        }
+    });
+}
 
 // ===========================
 // CONTACT FORM

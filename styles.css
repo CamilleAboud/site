@@ -1072,6 +1072,145 @@ img {
 }
 
 /* ===========================
+   VIDEO CARD COVER
+   =========================== */
+.card-video-cover {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-video-wrapper {
+    width: 100%;
+    aspect-ratio: 4/3;
+    position: relative;
+    overflow: hidden;
+    background: #1a1008;
+}
+
+.card-video-wrapper iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border: none;
+}
+
+/* ===========================
+   NEWS SECTION
+   =========================== */
+.news-section {
+    background: var(--color-bg);
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.news-card {
+    display: block;
+    background: var(--color-bg-alt);
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+    cursor: pointer;
+}
+
+.news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.news-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition);
+}
+
+.news-card:hover .news-image img {
+    transform: scale(1.05);
+}
+
+.news-body {
+    padding: 20px 24px;
+}
+
+.news-source {
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.news-title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.news-date {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--color-text-light);
+}
+
+/* ===========================
+   MODAL GALLERY
+   =========================== */
+.modal-gallery {
+    margin-top: 28px;
+}
+
+.gallery-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 16px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* ===========================
    PROJECT MODAL
    =========================== */
 .modal-overlay {
@@ -1211,6 +1350,15 @@ img {
     color: var(--color-text-muted);
 }
 
+.modal-description h4 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
 .modal-description ul li::before {
     content: '';
     position: absolute;
@@ -1246,6 +1394,14 @@ img {
 
     .modal-image {
         height: 220px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item img {
+        height: 200px;
     }
 }
 
@@ -1341,6 +1497,10 @@ img {
         grid-template-columns: repeat(3, 1fr);
     }
 
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .container {
         padding: 0 32px;
     }
@@ -1434,6 +1594,20 @@ img {
     .productions-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .news-card {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+    }
+
+    .news-image {
+        height: 100%;
     }
 
     .awards-grid {
