@@ -141,10 +141,40 @@ const projectData = {
         title: 'ElefantE',
         category: 'Teatro & Cultura',
         role: 'Produtora Executiva — Direção de Flávio Souza',
-        date: 'Mai — Set 2023',
-        image: 'images/projects/elefante.jpg',
-        description: '<p>Espetáculo teatral premiado na 8ª Premiação CBTIJ 2024 em 6 categorias, incluindo Melhor Espetáculo.</p><ul><li>Gestão completa da pré-produção à prestação de contas</li><li>Temporada no teatro do Espaço Cultural Municipal Sérgio Porto (Humaitá, RJ)</li><li>Selecionado pelo edital Foca 2022 da Prefeitura do Rio de Janeiro</li><li>Organização de equipe, agenda, captação de apoios e prestação de contas</li></ul><p><strong>Prêmios CBTIJ 2024:</strong> Melhor Espetáculo, Adereços, Melhor Direção Musical, Cenário, Melhor Ator, Iluminação.</p>',
-        tags: ['Teatro', 'Produção Executiva', 'CBTIJ', 'Premiado']
+        date: 'Mai — Set 2023 · Out 2025',
+        image: 'images/projects/elefante/elefante.jpg',
+        gallery: [
+            'images/projects/elefante/futuros.jpg',
+            'images/projects/elefante/revistadovilla.jpg'
+        ],
+        description: '<p>Espetáculo infantil que acompanha a jornada de um elefante que abandona sua manada para perseguir o sonho de conhecer o mar. Através de um rico jogo de sombras criadas por luzes, projetor e retroprojetor, <strong>Flávio Souza</strong> — sozinho em cena — transforma o palco em planícies, montanhas, oceanos e manadas de elefantes, criando um universo lúdico e poético.</p>' +
+            '<p>A peça fala da capacidade que nosso imaginário tem de produzir futuros e nos libertar de caminhos pré-definidos ou impostos — da importância do sonho e do desejo como ferramenta de transformação da nossa história. O ator atua como narrador-contador de histórias, utilizando teatro gestual, formas animadas, palhaçaria, projeções, brinquedos e ilustrações, com linguagem simples e acessível, resultando numa apresentação vibrante, contagiante e alegre.</p>' +
+            '<p><strong>Premiado na 8ª Premiação CBTIJ 2024</strong> (Centro Brasileiro de Teatro para a Infância e Juventude) em 6 categorias.</p>' +
+            '<h4>Ficha Técnica</h4>' +
+            '<ul>' +
+            '<li><strong>Autor, Ator, Cenógrafo e Figurinista:</strong> Flávio Souza</li>' +
+            '<li><strong>Direção de Movimentos:</strong> Denise Stutz</li>' +
+            '<li><strong>Duração:</strong> 50 minutos &bull; <strong>Classificação:</strong> Livre (recomendado a partir de 3 anos)</li>' +
+            '</ul>' +
+            '<h4>Prêmios CBTIJ 2024</h4>' +
+            '<ul>' +
+            '<li>Melhor Espetáculo</li>' +
+            '<li>Melhor Ator</li>' +
+            '<li>Melhor Direção Musical</li>' +
+            '<li>Melhor Cenário</li>' +
+            '<li>Melhor Iluminação</li>' +
+            '<li>Melhor Adereços</li>' +
+            '</ul>' +
+            '<h4>Temporadas</h4>' +
+            '<ul>' +
+            '<li><strong>2023:</strong> Espaço Cultural Municipal Sérgio Porto (Humaitá, RJ) — Edital FOCA 2022, Prefeitura do Rio de Janeiro</li>' +
+            '<li><strong>Jul 2025:</strong> Mostra Multifoco</li>' +
+            '<li><strong>Out 2025:</strong> Teatro Futuros – Arte e Tecnologia (Flamengo, RJ) — sábados e domingos, 11h30</li>' +
+            '</ul>' +
+            '<h4>Acessibilidade</h4>' +
+            '<p>O espetáculo conta com recursos de <strong>Libras</strong> e <strong>Audiodescrição</strong>, além de iluminação estável sem cortes bruscos, beneficiando pessoas neurodivergentes. A experiência dialoga com o público não só através da palavra, mas também das imagens, dos gestos e da animação.</p>' +
+            '<p><strong>Produção Executiva:</strong> Gestão completa da pré-produção à prestação de contas, organização de equipe, agenda, captação de apoios e prestação de contas.</p>',
+        tags: ['Teatro Infantil', 'Produção Executiva', 'CBTIJ 2024', 'Premiado', 'Acessibilidade', 'Teatro Gestual', 'Futuros', 'Sérgio Porto']
     },
     'conto-de-quem-sonha': {
         title: 'Conto de Quem Sonha',
