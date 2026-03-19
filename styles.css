@@ -1094,6 +1094,17 @@ img {
     padding: 4px 12px;
 }
 
+.timeline-formation .timeline-marker {
+    background: transparent;
+    border: 2px dashed var(--color-accent);
+}
+
+.timeline-formation .timeline-label {
+    background: #f0e6d2;
+    color: #6b5a3e;
+    font-style: italic;
+}
+
 .timeline-content h3 {
     font-family: var(--font-display);
     font-size: 1.3rem;
