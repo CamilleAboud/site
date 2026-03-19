@@ -145,8 +145,13 @@ const projectData = {
         image: 'images/projects/elefante/futuros.jpg',
         gallery: [
             'images/projects/elefante/futuros2.jpg',
-            'images/projects/elefante/elefante.jpg',
-            'images/projects/elefante/instagram-thumb.jpg'
+            'images/projects/elefante/infoteatro2.jpg',
+            'images/projects/elefante/infoteatro3.jpg',
+            'images/projects/elefante/infoteatro4.jpg',
+            'images/projects/elefante/infoteatro5.jpg',
+            'images/projects/elefante/infoteatro6.jpg',
+            'images/projects/elefante/infoteatro7.jpg',
+            'images/projects/elefante/sympla.jpg'
         ],
         description: '<p>Espetáculo infantil que acompanha a jornada de um elefante que abandona sua manada para perseguir o sonho de conhecer o mar. Através de um rico jogo de sombras criadas por luzes, projetor e retroprojetor, <strong>Flávio Souza</strong> — sozinho em cena — transforma o palco em planícies, montanhas, oceanos e manadas de elefantes, criando um universo lúdico e poético.</p>' +
             '<p>A peça fala da capacidade que nosso imaginário tem de produzir futuros e nos libertar de caminhos pré-definidos ou impostos — da importância do sonho e do desejo como ferramenta de transformação da nossa história. O ator atua como narrador-contador de histórias, utilizando teatro gestual, formas animadas, palhaçaria, projeções, brinquedos e ilustrações, com linguagem simples e acessível, resultando numa apresentação vibrante, contagiante e alegre.</p>' +
