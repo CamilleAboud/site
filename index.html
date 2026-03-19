@@ -222,13 +222,17 @@
                         <span class="card-date">2023</span>
                     </div>
                 </a>
-                <a href="#" class="production-card" data-project="elas-brilham">
+                <a href="#" class="production-card card-has-video" data-project="elas-brilham">
                     <div class="card-image">
-                        <img src="images/projects/elas-brilham.jpg" alt="Elas Brilham - Brain+">
+                        <img src="images/projects/elas-brilham/elas-brilham.jpg" alt="Elas Brilham - Doc. Musical" class="card-poster">
+                        <video class="card-video" muted loop playsinline preload="metadata">
+                            <source src="images/projects/elas-brilham/elas-brilham-cover.mp4" type="video/mp4">
+                            <source src="images/projects/elas-brilham/elas-brilham-cover.webm" type="video/webm">
+                        </video>
                     </div>
                     <div class="card-info">
                         <h3>Elas Brilham</h3>
-                        <p>Produtora Assistente &mdash; Brain+</p>
+                        <p>Produtora Assistente &mdash; Brain+ / Dir. Frederico Reder</p>
                         <span class="card-date">2022</span>
                     </div>
                 </a>
@@ -549,8 +553,8 @@
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <h3>Produtora Assistente</h3>
-                        <span class="timeline-company">Espetáculo "Elas Brilham" / Brain+ &bull; Set &mdash; Out 2022</span>
-                        <p>Teatro musical com temporada no Teatro Claro Rio e Teatro Claro São Paulo. Manutenção do espetáculo, cuidado com elenco, suporte à comunicação e assessoria de imprensa.</p>
+                        <span class="timeline-company">Doc Musical &ldquo;Elas Brilham&rdquo; / Brain+ &bull; Jul &mdash; Nov 2022</span>
+                        <p>Documentário musical com 7 atrizes celebrando mulheres que transformaram o mundo através da música. Temporada no Teatro Claro Rio (Copacabana, 659 lugares) e Teatro Claro SP (Vila Olímpia, 799 lugares). Dir. Frederico Reder. Patrocínio Brasilprev e Lorenzetti. Matéria no Fantástico/TV Globo. Manutenção do espetáculo, cuidado com elenco, suporte à comunicação e assessoria de imprensa.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -655,6 +659,27 @@
                     <button class="news-project-toggle">Ver matérias <span class="toggle-arrow">&darr;</span></button>
                 </div>
 
+                <!-- ELAS BRILHAM -->
+                <div class="news-project-card" data-news-project="elas-brilham">
+                    <div class="news-project-cover">
+                        <img src="images/projects/elas-brilham/elas-brilham.jpg" alt="Elas Brilham - Imprensa">
+                        <div class="news-project-overlay">
+                            <h3 class="news-project-title">Elas Brilham</h3>
+                            <span class="news-project-count">7 matérias</span>
+                        </div>
+                    </div>
+                    <div class="news-project-portals">
+                        <span>Lorenzetti</span>
+                        <span>ArteCult</span>
+                        <span>Acesso Cultural</span>
+                        <span>Destaque Imprensa</span>
+                        <span>Revista InFoco</span>
+                        <span>São Paulo Secreto</span>
+                        <span>Globoplay</span>
+                    </div>
+                    <button class="news-project-toggle">Ver matérias <span class="toggle-arrow">&darr;</span></button>
+                </div>
+
             </div>
 
             <!-- EXPANDED NEWS (hidden by default) -->
@@ -732,6 +757,86 @@
                             <span class="news-source">Sopa Cultural</span>
                             <h3 class="news-title">O Banquete &mdash; Companhia Ensaio Aberto no Teatro Vianinha</h3>
                             <span class="news-date">16 de setembro de 2024</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- EXPANDED NEWS - ELAS BRILHAM -->
+            <div class="news-expanded" id="news-elas-brilham">
+                <div class="news-expanded-header">
+                    <h3>Elas Brilham &mdash; Na Imprensa</h3>
+                    <button class="news-close-btn" data-news-close="elas-brilham">&times; Fechar</button>
+                </div>
+                <div class="news-grid">
+                    <a href="https://www.lorenzetti.com.br/noticias/releases/espet%C3%A1culo-elas-brilham---vozes-que-iluminam-e-transformam-o-mundo-chega-a-s%C3%A3o-paulo" target="_blank" class="news-card">
+                        <div class="news-image">
+                            <img src="images/projects/elas-brilham/elas-brilham.jpg" alt="Elas Brilham - Lorenzetti">
+                        </div>
+                        <div class="news-body">
+                            <span class="news-source">Lorenzetti</span>
+                            <h3 class="news-title">Espetáculo Elas Brilham &mdash; Vozes que iluminam e transformam o mundo chega a São Paulo</h3>
+                            <span class="news-date">Outubro de 2022</span>
+                        </div>
+                    </a>
+                    <a href="https://artecult.com/doc-musical-elas-brilham-estreia-dia-29-de-julho-no-teatro-claro-rio-trazendo-grande-celebracao-as-mulheres-atraves-da-musica/" target="_blank" class="news-card">
+                        <div class="news-image">
+                            <img src="images/projects/elas-brilham/elas-brilham.jpg" alt="Elas Brilham - ArteCult">
+                        </div>
+                        <div class="news-body">
+                            <span class="news-source">ArteCult</span>
+                            <h3 class="news-title">Doc musical &ldquo;Elas Brilham&rdquo; estreia no Teatro Claro Rio trazendo grande celebração às mulheres através da música</h3>
+                            <span class="news-date">Julho de 2022</span>
+                        </div>
+                    </a>
+                    <a href="https://acessocultural.com.br/2022/08/doc-musical-elas-brilham-realiza-curta-temporada-no-rio-de-janeiro/" target="_blank" class="news-card">
+                        <div class="news-image">
+                            <img src="images/projects/elas-brilham/elas-brilham.jpg" alt="Elas Brilham - Acesso Cultural">
+                        </div>
+                        <div class="news-body">
+                            <span class="news-source">Acesso Cultural</span>
+                            <h3 class="news-title">Doc musical &ldquo;Elas Brilham&rdquo; realiza curta temporada no Rio de Janeiro</h3>
+                            <span class="news-date">Agosto de 2022</span>
+                        </div>
+                    </a>
+                    <a href="https://destaqueimprensadigital.com.br/2022/10/07/elas-brilham/" target="_blank" class="news-card">
+                        <div class="news-image">
+                            <img src="images/projects/elas-brilham/elas-brilham.jpg" alt="Elas Brilham - Destaque Imprensa">
+                        </div>
+                        <div class="news-body">
+                            <span class="news-source">Destaque Imprensa Digital</span>
+                            <h3 class="news-title">Elas Brilham &mdash; Vozes que iluminam e transformam o mundo</h3>
+                            <span class="news-date">7 de outubro de 2022</span>
+                        </div>
+                    </a>
+                    <a href="https://revistainfoco.com.br/2022/09/26/sucesso-absoluto-de-publico-doc-musical-elas-brilham-faz-ultimas-sessoes-no-teatro-claro-rio-em-copacabana/" target="_blank" class="news-card">
+                        <div class="news-image">
+                            <img src="images/projects/elas-brilham/elas-brilham.jpg" alt="Elas Brilham - Revista InFoco">
+                        </div>
+                        <div class="news-body">
+                            <span class="news-source">Revista InFoco</span>
+                            <h3 class="news-title">Sucesso absoluto de público, doc musical &ldquo;Elas Brilham&rdquo; faz últimas sessões no Teatro Claro Rio</h3>
+                            <span class="news-date">26 de setembro de 2022</span>
+                        </div>
+                    </a>
+                    <a href="https://saopaulosecreto.com/elas-brilham-sp/" target="_blank" class="news-card">
+                        <div class="news-image">
+                            <img src="images/projects/elas-brilham/elas-brilham.jpg" alt="Elas Brilham - São Paulo Secreto">
+                        </div>
+                        <div class="news-body">
+                            <span class="news-source">São Paulo Secreto</span>
+                            <h3 class="news-title">Elas Brilham &mdash; Doc musical celebra mulheres que transformaram o mundo através da música</h3>
+                            <span class="news-date">Outubro de 2022</span>
+                        </div>
+                    </a>
+                    <a href="https://globoplay.globo.com/v/10925550/" target="_blank" class="news-card">
+                        <div class="news-image">
+                            <img src="images/projects/elas-brilham/elas-brilham.jpg" alt="Elas Brilham - Globoplay">
+                        </div>
+                        <div class="news-body">
+                            <span class="news-source">Globoplay</span>
+                            <h3 class="news-title">Elas Brilham &mdash; Matéria no Fantástico / TV Globo</h3>
+                            <span class="news-date">2022</span>
                         </div>
                     </a>
                 </div>
